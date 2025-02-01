@@ -1,9 +1,6 @@
 <?php
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
-use kartik\icons\Icon;
-
-Icon::map($this);
 
 $this->title = 'Iniciar Sesión';
 ?>
@@ -23,7 +20,7 @@ $this->title = 'Iniciar Sesión';
                     <?= $form->field($usuario, 'usuario_correo')->textInput(['autofocus' => true, 'class' => 'form-control form-control-sm']) ?>
                     <?= $form->field($usuario, 'usuario_clave')->passwordInput(['class'=>'form-control form-control-sm']) ?>
                     <div class="form-group">
-                        <?= Html::submitButton(Icon::show('sign-in-alt').' Entrar', ['class' => 'btn btn-primary btn-sm', 'name' => 'login-button']) ?>
+                        <?= Html::submitButton('<i class="fa fa-sign-in-alt></i> Entrar', ['class' => 'btn btn-primary btn-sm', 'name' => 'login-button']) ?>
                     </div>
                     <?php ActiveForm::end(); ?>
                 </div>
@@ -35,7 +32,7 @@ $this->title = 'Iniciar Sesión';
                 {
                     if ($data['error']) { ?>
                         <div class="alert alert-danger" role="alert">
-                            <?= Icon::show('times-circle').' '.$data['mensaje'] ?>
+                            <?= '<i class="times-circle></i> '.$data['mensaje'] ?>
                         </div>
                     <?php }
                 }

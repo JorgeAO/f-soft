@@ -1,4 +1,15 @@
 RewriteEngine On
+
+# Redirigir todas las solicitudes que no sean al backend a una página de error o a otra URL
+RewriteCond %{REQUEST_URI} !^/backend/web/ [NC]
+RewriteRule ^(.*)$ /error.html [L,R=403]
+
+# Opcional: Restringir el acceso al directorio frontend
+#<Directory "/ruta/a/tu/proyecto/frontend/web">
+#    Require all denied
+#</Directory>
+
+# Redirigir las solicitudes al backend a index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . index.php [L]
+RewriteRule ^backend/web/(.*)$ backend/web/index.php [L]

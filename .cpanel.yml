@@ -1,4 +1,3 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/amingeni/public_html/fsoft/
-    - /bin/cp -R /home2/amingeni/apps/fsoft/backend/web/ $DEPLOYPATH
+    - phar: composer.phar require kartik-v/yii2-icons "@dev"

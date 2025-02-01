@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/amingeni/public_html/fsoft/prod/
+    - /bin/cp -R web $DEPLOYPATH

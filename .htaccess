@@ -1,7 +1,0 @@
-RewriteEngine On
-RewriteBase /
-
-# Si no es un directorio o archivo existente, redirige a index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . index.php [L]

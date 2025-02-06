@@ -1,3 +1,3 @@
 deployment:
   tasks:
-    - phar: composer.phar require kartik-v/yii2-icons "@dev"
+    - php init

@@ -1,3 +1,4 @@
 deployment:
   tasks:
-    - php yii serve --port=8000 --docroot="backend/web"
+    - export DEPLOYPATH=/home2/amingeni/public_html/fsoft/
+    - /bin/cp -R /home2/amingeni/apps/fsoft/backend/web/ $DEPLOYPATH

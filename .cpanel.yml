@@ -1,4 +1,17 @@
 deployment:
-  tasks:
-    - export DEPLOYPATH=/home2/amingeni/public_html/fsoft/
-    - /bin/cp -R web $DEPLOYPATH
+  tasks: 
+    - task:
+      name: "Iniciar proyecto Yii2"
+      command: "cd /home2/amingeni/public_html/fsoft && php init"
+    - task:
+      name: "Seleccionar entorno de desarrollo"
+      command: "cd /home2/amingeni/public_html/fsoft && echo 0"
+    - task:
+      name: "Confirmar configuración"
+      command: "cd /home2/amingeni/public_html/fsoft && echo yes"
+    - task:
+      name: "Instalar dependencias"
+      command: "cd /home2/amingeni/public_html/fsoft && composer install"
+    - task:
+      name: "Limpiar caché"
+      command: "cd /home2/amingeni/public_html/fsoft && php artisan cache:clear"

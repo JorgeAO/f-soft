@@ -4,9 +4,9 @@ return [
     'components' => [
         'db' => [
             'class' => \yii\db\Connection::class,
-            'dsn' => 'mysql:host=localhost;dbname=fsoft',
-            'username' => 'root',
-            'password' => '',
+            'dsn' => 'mysql:host=localhost;dbname=amingeni_fsoft_dev',
+            'username' => 'amingeni_root',
+            'password' => 'Samuel.0317',
             'charset' => 'utf8',
         ],
         'mailer' => [

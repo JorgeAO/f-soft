@@ -1,0 +1,14 @@
+RewriteEngine on
+
+# Si el directorio o archivo existe, úsalo directamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# De lo contrario, redirige a index.php
+RewriteRule . index.php
+
+# Permitir CORS
+Header set Access-Control-Allow-Origin "http://localhost:4200"
+Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+Header set Access-Control-Allow-Credentials "true"

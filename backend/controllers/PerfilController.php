@@ -132,4 +132,26 @@ class PerfilController extends Controller
 
         throw new NotFoundHttpException('No se encuentra el registro.');
     }
+    
+    public function actionConsultar()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $query = new \yii\db\Query();
+
+        $request = \Yii::$app->request;
+        $params = $request->get();
+
+        $perfiles = $query->select(['perfil.*', 'e.estado_nombre'])
+            ->from('perfil')
+            ->join('JOIN', 'estado e', 'e.estado_codigo = perfil.fk_estado')
+            ->where($params)
+            ->all();
+
+        return [
+            'error' => false,
+            'mensaje' => '',
+            'datos' => $perfiles
+        ];
+    }
 }

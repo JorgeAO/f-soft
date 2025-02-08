@@ -141,6 +141,7 @@ class PerfilController extends Controller
 
         $request = \Yii::$app->request;
         $params = $request->get();
+        unset($params["r"]);
 
         $perfiles = $query->select(['perfil.*', 'e.estado_nombre'])
             ->from('perfil')
